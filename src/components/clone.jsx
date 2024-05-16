@@ -40,7 +40,7 @@ const Clone = () => {
       });
       const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/api/data/all');
+            const response = await axios.get('https://backendtest-49o0.onrender.com/api/data/all');
             setData(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -49,7 +49,7 @@ const Clone = () => {
     };
       const handleCount = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/api/data/count');
+            const response = await axios.get('https://backendtest-49o0.onrender.com/api/data/count');
             setCount(response.data);
         } catch (error) {
             console.error('Error fetching count:', error);
@@ -58,7 +58,7 @@ const Clone = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/api/data/add', { name, description });
+            const response = await axios.post('https://backendtest-49o0.onrender.com/api/data/add', { name, description });
             console.log(response.data);
             handleCount()
             fetchData()
@@ -73,7 +73,7 @@ const Clone = () => {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`http://localhost:3001/api/data/update/${selectedItemId}`, { name, description });
+            const response = await axios.post(`https://backendtest-49o0.onrender.com/api/data/update/${selectedItemId}`, { name, description });
             console.log(response.data);
             handleCount()
             fetchData()
