@@ -106,11 +106,11 @@ const Clone = () => {
             <form onSubmit={selectedItemId?handleUpdate:handleSubmit}>
                 <div className="form-group"> {/* Apply CSS class */}
                     <label>Name:</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                    <input required type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 </div>
                 <div className="form-group"> {/* Apply CSS class */}
                     <label>Description:</label>
-                    <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+                    <textarea required value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
                 <button type="submit">{selectedItemId?"Update Data":"Add Data"}</button>
             </form>
